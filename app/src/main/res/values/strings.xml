@@ -4,4 +4,6 @@
     <string name="et_add">Wpisz opcje do dodania</string>
     <string name="btn_add">Dodaj</string>
     <string name="tv_list">Aktualne opcje:\n%s</string>
+
+    <string name="error_too_many">Podano zbyt wiele opcji maksymalnie może być 10</string>
 </resources>
