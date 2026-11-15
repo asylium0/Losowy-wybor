@@ -2,6 +2,7 @@ package com.example.losowy_wybor;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -54,7 +55,8 @@ public class RandomChoice extends AppCompatActivity {
 
     private void getRandomChoice(){
         Random rand = new Random();
-        int randomIndex = rand.nextInt(listLength+1);
+        int randomIndex = rand.nextInt(listLength);
+        Log.d("RandomChoice", "Index wynosi: "+randomIndex+"\nDlugosc listy wynosi: "+listLength);
 
         choice = list[randomIndex];
         tvRandChoice.setText(getString(R.string.tv_rand_choice, choice));
