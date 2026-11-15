@@ -26,7 +26,7 @@
         android:id="@+id/tvList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tv_list"
+        tools:text="Aktualne opcje:\n-Żuk\n-Auto\n-Pomidor\n-Kalejdoskop"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
         android:gravity="center"
