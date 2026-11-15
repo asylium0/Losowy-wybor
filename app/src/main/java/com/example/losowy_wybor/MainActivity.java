@@ -15,7 +15,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.ArrayList;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnAdd, btnChoice;
@@ -28,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                if (result.getResultCode() == RESULT_OK){
-                   return;
+                   String choice = result.getData().getStringExtra(RandomChoice.EXTRA_CHOICE);
+                   showChoice(choice);
                }
             });
 
@@ -57,7 +60,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setChoice(){
-        return;
+
+        if(nextItem == 0){
+            Toast.makeText(this, R.string.error_no_choices, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Intent intent = new Intent(this, RandomChoice.class);
+        intent.putExtra(RandomChoice.EXTRA_LIST, list);
+        intent.putExtra(RandomChoice.EXTRA_LENGTH, nextItem);
+
+        choiceLauncher.launch(intent);
     }
 
     private void addItem(){
@@ -84,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return text.toString();
+    }
+
+    private void showChoice(String choice){
+        Snackbar.make(findViewById(R.id.main), getString(R.string.choice, choice), Snackbar.LENGTH_LONG)
+                .show();
     }
 
 }

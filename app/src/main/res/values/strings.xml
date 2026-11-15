@@ -6,5 +6,14 @@
     <string name="btn_choice">Losuj</string>
     <string name="tv_list">Aktualne opcje:\n%s</string>
 
+    <string name="tv_rand_choice">Wylosowano: %s</string>
+    <string name="btn_accept">Wybieram to</string>
+    <string name="btn_again">Losuj ponownie</string>
+
+
     <string name="error_too_many">Podano zbyt wiele opcji maksymalnie może być 10</string>
+    <string name="error_no_choices">Nie dodano żadnej opcji</string>
+    <string name="choice">Wybrano: %s</string>
+
+
 </resources>
